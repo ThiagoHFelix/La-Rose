@@ -1,5 +1,5 @@
 *****************************************************************************************
-*	Este Arquivo descreve todas as implementações de cada atualização do sistema	*
+*	Este arquivo descreve todas as implementações de cada atualização do sistema	*
 *											*
 *	Desenvolvedores: Thiago Henrique Felix						*
 *											*
@@ -8,7 +8,9 @@
 *****************************************************************************************
 
 
- -> Versão 0.1.
+ -> Versão 0.1. | 2017/12/11
 	-> Criado o diagrama de caso de uso do Administrador e Cliente.
 	-> Atualizado o documento de projeto.
 	-> Implementado todos os arquivos do Framework Laravel.
+ -> Versão 0.2  | 2017/12/19
+	-> Criado o HTML da pagina inicial

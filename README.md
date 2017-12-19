@@ -1,4 +1,4 @@
-#PROJECT X
+PROJECT X
 --------------------
 Sobre
 -----
