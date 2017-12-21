@@ -14,3 +14,6 @@
 	-> Implementado todos os arquivos do Framework Laravel.
  -> Versão 0.2  | 2017/12/19
 	-> Criado o HTML da pagina inicial
+ -> Versão 0.3  | 2017/12/21
+	-> Sistema zerado
+		-> Retirado o framework
