@@ -17,3 +17,6 @@
  -> Versão 0.3  | 2017/12/21
 	-> Sistema zerado
 		-> Retirado o framework
+ -> Versão 0.4  | 2017/12/21
+	-> Documentação UML refeita
+	-> Pagina inicial iniciada

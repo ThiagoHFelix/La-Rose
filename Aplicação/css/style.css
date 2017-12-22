@@ -11,17 +11,18 @@
 /* ==========  Reset ========== */
 * {padding: 0px;margin: 0px;font-size: 100%;font-weight: 300;border:none; }
 
-body {background-color:#010101; color:#fff; }
+body {background-color:#010101; color:#fff; width:100%;}
 
 a { color:#fff;text-decoration: none; }
+
 
 /* ==========  Cabeçalho ========== */
 
 .cabeçalho {width: 100%;height: 70px;background-color: #010101;}
 .logo { margin-left:30px; float:left;font-size: 3em;font-weight: 900;font-family: 'Sacramento', cursive; color:#fff;}
 /* --------- Menu ----------*/
-.btn-menu {height:50px;color:#f8f1f1; background-color:#010101;width:50px;float:right;text-align:center;font-size: 1.5em; border-radius:100%;margin-top:10px;margin-right:10px;cursor:pointer;}
-.menu {    width:100%;height:100%;position:fixed; margin-top:70px; text-align: center; display: none; list-style: none;    background-color: rgba(0,0,0,0.8); }
+.btn-menu { height:50px;color:#f8f1f1; background-color:#010101;width:50px;float:right;text-align:center;font-size: 1.5em; border-radius:100%;margin-top:10px;margin-right:10px;cursor:pointer;}
+.menu {    width:100%;height:100%;position:fixed;  margin-top:70px;text-align: center; display: none; list-style: none;    background-color: rgba(0,0,0,0.8); }
 .menu li { font-size:2em; line-height:50px; color: #fff; margin: 0px 5px 0px 5px; }
 .menu li:hover { background-color:#fff; color:#010101;}
 .menu li i { float:left; margin-left:25px; line-height:50px; }
@@ -29,23 +30,25 @@ a { color:#fff;text-decoration: none; }
 
 /* ==========  Banner ========== */
 .banner { width: 100%; height:270px; text-align:center;   background: lightgray url("../img/bernner.jpg") no-repeat fixed;transition: 0.5s;}
-.banner h2 {font-size:2.8em; font-family: 'Sacramento', cursive; font-weight:700; color:#fff; padding-top:10px;}
+.banner h2 {font-size:2.8em; font-family: 'Sacramento', cursive;  color:#fff; padding-top:10px;}
 .banner p { color:#fff; margin-top:15px; font-size:1.6em;}
 .logo-sm { font-family: 'Sacramento', cursive; color:#fff; font-size:1.5em; padding-right:15px; }
 
 /* ==========  Equipe ========== */ 
-.conteiner-equipe { width:95%; padding-left: 5%}
+.conteiner-equipe { width:100%; margin:auto;  }
+.conteiner-perfil { width: 100%; float:left}
+.conteiner-perfils { width:100%; margin:auto; overflow-y: hidden;  overflow-x: auto; }
 .texto { width:100%;  height:150px; margin:auto;text-align: center; margin-top:20px;}
 .texto h3 { font-size: 2.3em; font-family: 'Sacramento',cursive; font-weight:500; margin-bottom:10px;  }
-.texto p { line-height:25px; }
+.texto p { line-height:25px;  }
 /* --------- Perfil ----------*/
-.perfil { width:350px; height:500px; margin:auto;  margin-top:10px; border:1px solid rgba(255,255,255,0.2); border-radius:7px; }
-.foto img { width:340px; height:350px;  margin-left: 5px; margin-right: 5px; margin-top:5px; border-radius:3px;}
+.perfil { width:350px; height:500px; margin:auto; margin-bottom: 5px; border:1px solid rgba(255,255,255,0.2); border-radius:7px; }
+.foto img { width:98%; height:350px;  margin:1% 1%;  border-radius:3px;}
 .nome { text-align:center;margin-top:20px; font-family: 'Sacramento', cursive; font-size: 2em; }
 .funcao {  text-align:center; font-family: 'Sacramento', cursive; font-size: 2.5em;  }
 
 /* ==========  Contato ========== */ 
-.contato { width:90%; margin:auto; padding:2% 2%; padding-top: 40%  }
+.contato { width:95%; margin:auto; padding:2% 2%;}
 .contato h3 { width: 100%; height:50px; text-align: center; font-family: 'Sacramento', cursive; font-size: 2.5em; margin:auto; margin-bottom:10px;}
 .caixa-texto { width:100%; height:50px; margin-bottom:10px; text-align:center; color:#fff; background:#010101; border:1px solid rgba(255,255,255,0.3); border-radius: 7px;}
 .textarea { height: 200px; padding-top:20px; font-family: sans-serif; }
@@ -59,21 +62,32 @@ a { color:#fff;text-decoration: none; }
 
 
 
-/* ==========  MEDIA MIN - 710 ========== */
-@media screen and (min-width:950px) {
-.conteiner-equipe { }
+/* ==========  MEDIA MIN - 866 ========== */
+@media screen and (min-width:866px) {
+  
+  .conteiner-perfil { width: 49%; }
+  
+  /* === Mudando o Menu === */
+  .btn-menu {display: none;}
+  .fechar { display:none;}
+  .menu { display:block !important; width:auto; position:static; margin:auto; height:70px; margin-top:0px; float:right; list-style: none; background: #010101; }
+  .menu li { width:auto; display:inline-block; padding:10px; font-size: 1.5em; height:50px; }
+  .menu li:hover {  }
+  .menu i { margin-left: 0px; line-height:0px; display: none;}
+
 }
-/* ==========  MEDIA MIN - 800 ========== */
-@media screen and (min-width: 800px) {
+/* ==========  MEDIA MIN - 1350 ========== */
+@media screen and (min-width: 1350px) {
+ 
+
+   .conteiner-perfil { width: 33%; }
    
-    .conteiner-equipe {  }
-    .perfil {width: 350px;  float:left; margin:1% 1%; }
     
 }
-/* ==========  MEDIA MIN - 1024 ========== */
+/* ==========  MEDIA MIN - 1025 ========== */
 @media screen and (min-width:1025px) {
  .banner { background: lightgray url("../img/bernner-1920.jpg") no-repeat fixed; transition: 0.5s;}
- .contato { width:60%; margin:auto; padding:2% 2%; padding-top: 40%  }
+ .contato { width:60%; margin:auto; padding:2% 2%;  }
 
 }
 
