@@ -1,0 +1,35 @@
+/*
+=================================
+* Author: Thiago Henrique Felix *
+* Date: 2017/12/23              *
+* Version: 0.1                  *
+================================= */
+
+/* ============ Conteiner App ============  */
+.conteiner-app { transition: 1s; width: 90%; margin:auto; height: auto; padding: 10px 20px; }
+
+/* ============ Logo ============  */
+.logo-login {width: 100%; height: auto; text-align: center; margin-bottom: 20px;}
+.logo-login h1 {   font-size: 3.5em;}
+.logo-login p { width: 100%; }
+
+
+#logar-com {font-size:2em; text-align: center; margin:10px 5px; }
+.conteiner-sociais { border-top:1px solid rgba(255,255,255,0.5); }
+
+/* ============ Links Sociais ============  */
+.login-social {width:90%; height:30px; margin:auto; margin-top:10px; text-align: center; line-height: 30px; cursor: pointer; padding: 3px; border:1px solid rgba(255,255,255,0.3); border-radius: 7px; }
+.login-social:hover { background: rgba(255,255,255,0.1); }
+.login-social i { line-height: 30px; float:left;}
+
+.aviso-sistema { width: 100%; height:auto; text-align: center;padding:5px 5px;  word-break: break-all;}
+    
+.cadastrar-se { width: 100%; height: auto; text-align:center; margin-top:15px; padding-top: 8px; font-size: 1.9em; border-top:1px solid rgba(255,255,255,0.3); font-family: 'Sacramento', cursive;}
+.cadastrar-se a { color:rgba(255,255,255,0.3); transition: 1s;}
+.cadastrar-se a:hover {  color:rgba(255,255,255,0.8); transition: 1s;}
+/* ========= Redimencionamento da Página ===========*/
+
+@media screen and (min-width:550px){ .conteiner-app {width: 80%; transition: 1s; } }
+@media screen and (min-width:700px){ .conteiner-app {width: 70%; transition: 1s; } }
+@media screen and (min-width:866px){ .conteiner-app {width: 40%; transition: 1s; } }
+@media screen and (min-width:1024px){ .conteiner-app {width: 30%; transition: 1s; } }

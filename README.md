@@ -9,6 +9,7 @@ Ferramentas
 Para o desenvolvimento desta ferramenta será utilizado algumas ferramentas especificas. Veja abaixo:
 + Linguagem de programação _server-side_ **PHP** | Version 7.0
 + SGBD (Sistema Gerenciador de Banco de Dados) **Firebird** | Version 2.5
++ Framework Backend **Codeigniter** | Version 3.1.6
 
 Desenvolvedores
 ---------------

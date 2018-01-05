@@ -1,0 +1,11 @@
+/*
+=================================
+* Author: Thiago Henrique Felix *
+* Date:   2018/01/03            *
+* Version: 0.1                  *
+=================================
+*/
+
+/*================ AVISO ================*/
+.alerta {  width:92%; height:auto; border:1px solid rgba(255,255,255,0.3); word-wrap: break-word; padding:2% 4%; border-radius: 5px; background:#fff; color:#010101; margin-bottom:5px; text-align:center;}
+.alerta i { float:left; height: 100%;}
