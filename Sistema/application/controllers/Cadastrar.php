@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 include_once 'application/objetos/Pessoa.php';
 
 /**
- * Classe responsavel pego cadastro no sistema
+ * Classe responsavel pelo cadastro no sistema
  */
 class Cadastrar extends CI_Controller {
     
@@ -26,17 +26,20 @@ class Cadastrar extends CI_Controller {
        
         parent::__construct();
         
-        $this->load->library(['form_validation','session']);
+        $this->load->library(['form_validation']);
         $this->load->model(['PessoaModel']);
+        
+        
         
     }//construct
     
+   
+ 
     /**
-     * Função padrão
+     * Cadastra um cliente no banco de dados
      */
-    public function index(){
-       
-        
+    public function cliente(){
+            
         $retorno = $this->valida();
 
         /*
@@ -77,13 +80,11 @@ class Cadastrar extends CI_Controller {
                 'input_conf_senha' => $this->input->post('conf_senha'),
             ];
         endif;
-
-
-
+        
         $this->load->view('cadastro', $this->dados_formulario);
         
-        
-    }//index
+    }//cadastro
+
     
     /**
      * Faz a validação dos dados inseridos no formulario da view cadastro
@@ -109,14 +110,14 @@ class Cadastrar extends CI_Controller {
             //Verifico se a data foi inserida no formulario
             if (strcmp($input_nascimento, '') > 0):
                 if (!$this->validaData($input_nascimento)):
-                    $this->session->set_flashdata('aviso_cadastro', 'A data inserida está inválida');
+                    $this->session->set_flashdata('aviso_cadastro', 'A data inserida não é válida');
                     RETURN FALSE;
                 endif;
             endif;
             
             //Verifico se a propriedade USER_NAME já existe no banco de dados
             if(!$this->validaUserName($this->input->post('nome_usuario'))):
-                $this->session->set_flashdata('aviso_cadastro','Este nome de usuário já existe, tente outro');
+                $this->session->set_flashdata('aviso_cadastro','Este nome de usuário não está disponivel');
                 RETURN FALSE;
             endif;
             
@@ -128,7 +129,7 @@ class Cadastrar extends CI_Controller {
 
         else:
             
-            log_message('aviso', 'Dados inseridos são inválidos');
+            log_message('info', 'Dados inseridos são inválidos');
             
             $this->session->set_flashdata('aviso_cadastro', validation_errors());
             RETURN FALSE;
@@ -147,6 +148,11 @@ class Cadastrar extends CI_Controller {
         
         //A data de nascimento é maior do que a data atual 
         if($data_array[0]>(date('Y')-5)):
+            RETURN FALSE;
+        endif;
+        
+        //O ano deve ser maior que 1950
+        if($data_array[0]<1950):
             RETURN FALSE;
         endif;
         
@@ -181,7 +187,7 @@ class Cadastrar extends CI_Controller {
      * Insere uma pessoa no banco de dados
      * @return boolean [TRUE ou FALSE] TRUE no sucesso e FALSE no fracasso
      */
-    private function insertPessoa(){
+    private function insertPessoa(string $funcao = ''){
         
         $nome = $this->input->post('nome');
         $nome_usuario = $this->input->post('nome_usuario');
@@ -190,19 +196,21 @@ class Cadastrar extends CI_Controller {
         $sexo = $this->input->post('sexo');
         $nascimento = $this->input->post('nascimento');
         $senha = $this->input->post('senha');
-
+        
         $pessoa = new Pessoa($nome, $email, $sexo, 'Cliente', $nome_usuario, $senha, NULL, $telefone, $nascimento);
-
-        log_message('debug', 'Criador a Pessoa: ' . $pessoa);
+        $pessoa->setFuncao($funcao);
+        
+        log_message('debug', 'Criado a Pessoa: ' . $pessoa);
 
         //Inserindo pessoa no banco de dados
         if ($this->PessoaModel->insert($pessoa)):
-            $this->session->set_flashdata('aviso_cadastro', 'O usuário foi cadastrado com sucesso no banco de dados');
-       
+            $this->session->set_flashdata('aviso_cadastro', 'O usuário foi cadastrado com sucesso');
+            log_message('debug', 'Pessoa cadastrada com sucesso no banco de dados');
             return TRUE;
             
         else:
             $this->session->set_flashdata('aviso_cadastro', 'Ocorreu um erro ao cadastrar o usuário, tente novamente mais tarde');
+            log_message('error', 'Ocorreu um erro ao cadastrar o usuário, tente novamente mais tarde');
         endif;
         
         return FALSE;

@@ -13,12 +13,8 @@
         <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="css/style_index.css?v=3">
 
-       
-
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
-
-
 
 
     </head>

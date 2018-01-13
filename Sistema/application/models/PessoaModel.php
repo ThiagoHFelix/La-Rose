@@ -32,6 +32,8 @@ class PessoaModel extends CI_Model{
         
         $this->load->database();
         
+        log_message('info', 'Model Pessoa Criado com sucesso');
+        
     }//construct
     
     /**
@@ -59,8 +61,11 @@ class PessoaModel extends CI_Model{
     ];
         
         
-    return $this->db->insert('PESSOA',$pessoaArray);
-        
+     $retorno = $this->db->insert('PESSOA',$pessoaArray);
+     
+     if(!$retorno) log_message ('error', 'Erro ao inserir pessoa no banco de dados'.$pessoaArray);
+     
+     return $retorno;
         
     }//insert
     
@@ -71,7 +76,7 @@ class PessoaModel extends CI_Model{
     public function getAll(){
         
         $resultados = $this->db->get('PESSOA');
-       
+        log_message('info', 'Buscando todas as pessoas no banco de dados');
         
         if ($resultados->num_rows() > 0):
             foreach ($resultados->result_array() as $pessoa):

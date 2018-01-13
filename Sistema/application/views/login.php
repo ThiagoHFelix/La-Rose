@@ -11,8 +11,9 @@
         <meta name="viewport"content="width:device-width, initial-scale=1.">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style_login.css?v=6">
+        <link type="text/css" rel="stylesheet" href="css/style_login.css?v=8">
         <link type="text/css" rel="stylesheet" href="css/style_index.css?v=5">
+        <link type="text/css" rel="stylesheet" href="css/style_cadastro.css?v=1">
 
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
@@ -34,12 +35,16 @@
                 <p>Insira seus dados para entrar no sistema</p>
             </div>
 
-            <form>
-                <input class="caixa-texto" type="text" name="usuario" placeholder="Nome de Usuário" >
-                <input class="caixa-texto" type="password" name="senha" placeholder="Senha" >
-               
-            
+            <form  method="POST" action="<?php echo base_url('/Login'); ?>" >
+                <input class="caixa-texto" type="text" name="usuario" required="" placeholder="Nome de usuário" >
+                <input class="caixa-texto" type="password" name="senha" required  placeholder="Senha" >
                 
+                
+<?php if (strcmp($this->session->flashdata('aviso_login'), '') !== 0): ?>
+
+                    <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i>  <?php echo $this->session->flashdata('aviso_login'); ?>   </div>
+
+<?php endif; ?>
                 
                 <button class="btn ">Logar</button>
                 <p id="logar-com" class="font-site">Logar Com</p>
@@ -53,7 +58,7 @@
                 </div>
 
                 <div class="cadastrar-se">
-                    <a href="<?php echo base_url('/Cadastrar'); ?>" >Cadastrar-se</a>
+                    <a href="<?php echo base_url('/Cadastrar/Cliente'); ?>" >Cadastrar-se</a>
                 </div>
 
             </form>

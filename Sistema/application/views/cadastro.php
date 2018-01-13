@@ -11,13 +11,13 @@
         <meta name="viewport"content="width:device-width, initial-scale=1.">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style_login.css?v=2">
-        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=2">
-        <link type="text/css" rel="stylesheet" href="css/style_cadastro.css?v=5">
+        <link type="text/css" rel="stylesheet" href="../css/style_login.css?v=2">
+        <link type="text/css" rel="stylesheet" href="../css/style_index.css?v=2">
+        <link type="text/css" rel="stylesheet" href="../css/style_cadastro.css?v=5">
 
 
         <!-- Icons | site = Fonts Awesome -->
-        <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
+        <link rel="stylesheet" type="text/css" href="../pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
 
 
 
@@ -32,13 +32,12 @@
 
             <div class="logo-login">
 
-                <h1 class="font-site">La'Rose</h1>
                 <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i><p> Todos os campos com os caracter (*) são obrigatórios</p></div>
                 <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A data maxíma de nascimento aceita é de no minimo cinco anos atrás </p>  </div>
                 <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A senha deve ter ao menos cinco caracteres </p>  </div>
             </div>
 
-            <form method="POST" action="<?php echo base_url('/Cadastrar'); ?>">
+            <form method="POST" action="<?php echo base_url('/Cadastrar/Cliente'); ?>">
 
                 <input value="<?php echo $input_nome_usuario; ?>"  class="caixa-texto" type="text" name="nome_usuario" maxlength="20" required placeholder="Nome de Usuário*" />
                 <input value="<?php echo $input_nome; ?>" class="caixa-texto" type="text" name="nome" maxlength="60" required placeholder="Nome Completo*" />
@@ -78,9 +77,9 @@
 
         <!-- Scripts -->
         <!-- Jquery -->
-        <script type="text/javascript" src="pacotes/jquery/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="../pacotes/jquery/jquery-3.2.1.js"></script>
         <!-- Menu -->
-        <script type="text/javascript" src="js/javascript_menu.js"></script>
+        <script type="text/javascript" src="../js/javascript_menu.js"></script>
 
         <script type="text/javascript" >
 
