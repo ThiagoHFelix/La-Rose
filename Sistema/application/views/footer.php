@@ -1,4 +1,4 @@
-<footer class="rodape">
+<footer class="rodape" >
 
     <div class="redes-sociais">
 

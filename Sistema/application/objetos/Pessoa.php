@@ -210,9 +210,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       switch(strtoupper($tipo)):
           
-        case 'ADMINISTRADOR':
+        case 'ADM':
         case 'CLIENTE':break;
-        default:die('A propriedade [TIPO] de pessoa é inválida');    
+        default:die('A propriedade [TIPO] de pessoa está inválida');    
           
       endswitch;
       

@@ -187,7 +187,7 @@ class Cadastrar extends CI_Controller {
      * Insere uma pessoa no banco de dados
      * @return boolean [TRUE ou FALSE] TRUE no sucesso e FALSE no fracasso
      */
-    private function insertPessoa(string $funcao = ''){
+    private function insertPessoa(string $funcao = '',string $tipo = 'CLIENTE'){
         
         $nome = $this->input->post('nome');
         $nome_usuario = $this->input->post('nome_usuario');

@@ -14,8 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Login extends CI_Controller{
     
-    private $model;
-    private $cliente = NULL;
+    private $pessoa = NULL;
     
     /**
      * Construtor padrão
@@ -26,10 +25,9 @@ class Login extends CI_Controller{
   
        
       if(isset($_SESSION['USUARIO'])):
-          redirect(base_url('/Cliente'));
+             $this->redirecionamento();    
       endif;
      
-      
       
       $this->load->library('form_validation');
         
@@ -38,27 +36,46 @@ class Login extends CI_Controller{
     /**
      * funcao padrao da classe
      */
-    public function index(){ $this->cliente(); }//index
+    public function index(){ $this->pessoa(); }//index
     
     /**
-     * Responsavel pelo login do cliente no sistema
+     * Responsavel pelo login de pessoas no sistema
      */
-    public function cliente (){
+    private function pessoa(){
         
         if($this->validaFormulario()):
             
-            if($this->validaCliente()):
+            if($this->validaUsuario()):
                 
                 $this->iniciaSessao();
-                redirect(base_url('/Cliente'));
-                
+            
+                $this->redirecionamento();
+               
             endif;
             
         endif;
         
         $this->load->view('login');
         
-    }//cliente
+    }//pessoa
+    
+    
+    /**
+     * Verifica o tipo do usuário e o redireciona para sua sessão
+     */
+    private function redirecionamento(){
+        
+         switch (strtoupper($this->session->userdata('TIPO'))):
+
+            case 'CLIENTE':redirect(base_url('/Cliente'));
+                break;
+            case 'ADM':redirect(base_url('/Administrador'));
+                break;
+            default: $this->erro->erro('Erro interno', 'Ocorreu um erro interno, informações importantes sobre sua conta não foram encontradas. Entre em contato com o administrador');
+
+        endswitch;
+        
+    }//redirecionamento
     
     
     /**
@@ -85,10 +102,10 @@ class Login extends CI_Controller{
     
     
     /**
-     * Faz a validação do usuário e senha do cliente
+     * Faz a validação do usuário e senha do usuário
      * @return boolean [TRUE o FALSE] True se os dados forem validados e FALSE caso contrario
      */
-    private function validaCliente(){
+    private function validaUsuario(){
         
         
         $this->load->model('PessoaModel');
@@ -101,10 +118,10 @@ class Login extends CI_Controller{
             if(strcmp(strtoupper($pessoa->getNome_usuario()), strtoupper($this->input->post('usuario'))) === 0):
                
                 if(strcmp(strtoupper($pessoa->getSenha()),strtoupper($this->input->post('senha'))) === 0):
-                    
+                   
                     log_message("info", 'Usuário validado com sucesso. Usuário: '.$pessoa);
                
-                    $this->cliente = $pessoa;
+                    $this->pessoa = $pessoa;
                     RETURN TRUE;
                     
                 endif;
@@ -117,7 +134,7 @@ class Login extends CI_Controller{
         $this->session->set_flashdata('aviso_login','Dado(s) incorreto(s), verifique seu Usuário ou Senha');
         RETURN FALSE;
         
-    }//validaCliente
+    }//ValidaUsuário
     
     
    /**
@@ -125,17 +142,17 @@ class Login extends CI_Controller{
     */
    private function iniciaSessao(){
        
-       if($this->cliente === NULL):
-           log_message('error', 'Erro interno, objeto de cliente está nulo');
-           die('Ocorreu um erro interno');
+       if($this->pessoa === NULL):
+           log_message('error', 'Erro interno, objeto de pessoa está nulo');
+           $this->erro->erro('Erro interno','Ocorreu um erro interno,o objeto de pessoa não pode ser encontrado Entre em contato com o administrador');
        endif;
        
        /* Criando dados de sessão */
-       $_SESSION['TIPO'] = $this->cliente->getTipo();
-       $_SESSION['NOME'] = $this->cliente->getNome();
-       $_SESSION['USUARIO'] = $this->cliente->getNome_usuario();
-       $_SESSION['EMAIL'] = $this->cliente->getEmail();
-       $_SESSION['ID'] = $this->cliente->getId();
+       $_SESSION['TIPO'] = $this->pessoa->getTipo();
+       $_SESSION['NOME'] = $this->pessoa->getNome();
+       $_SESSION['USUARIO'] = $this->pessoa->getNome_usuario();
+       $_SESSION['EMAIL'] = $this->pessoa->getEmail();
+       $_SESSION['ID'] = $this->pessoa->getId();
      
        
    }//iniciaSessao

@@ -45,7 +45,7 @@ class Cliente extends CI_Controller{
      */
     public function dashboard(){
         
-        $this->load->view('cliente/dashboard');
+        $this->load->view('Session/Cliente/Session');
         
     }//dashboard
     
@@ -66,6 +66,16 @@ class Cliente extends CI_Controller{
 
         endif;
     }//sair
+    
+    /**
+     * Gerencimento de avisos no sistema
+     */
+    public function aviso(){
+        
+        
+        die('Ainda não foi implementado');
+        
+    }//aviso
     
     
     

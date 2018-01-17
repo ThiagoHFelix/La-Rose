@@ -1,0 +1,98 @@
+/*
+ ===================================================================
+  @Arquivo: Style Session
+  @Autor: Thiago Henrique Felix <thiagoacdc12@gmail.com>
+  @Data:   13/01/2018
+  @Projeto: La-Rose
+ ===================================================================
+*/
+
+/* ==========  GERAL ========== */
+.vermelho {background:red;}
+.preto {background: #000000;}
+.azul {background: blue;}
+.shadow-black:hover { box-shadow: 0px 0px 10px 2px #000000; cursor: pointer;}
+
+/* ==========  CONTEINERs ========== */
+.conteiner { width: 100%; height:auto;}
+.conteiner-header { width: 100%; height:auto;}
+.conteiner-aside { width:100%; height: auto; }
+.conteiner-article { margin-top:20px; width:100%; height:auto; }
+.conteiner-footer { width:100%; height: auto; margin-top: 30px; }
+
+
+/* ==========  BUTTON-MENU ========== */
+
+#button-menu { width: 100%; height: 70px; background: #010101; color:#fff; font-family: 'Sacramento', cursive; font-size: 1.8em; }
+#button-menu:hover { cursor: pointer; background:#080808; }
+.nav-aside { width:96%;  text-align:center; background: #010101; padding:2%; }
+.nav-aside li { padding:10px; }
+.selecionado { background: #404040; color:white}
+.nav-aside i { float:left; }
+.nav-aside li:hover { background:#fff;color:#000000; }
+.hide-aside { display: none; transition: 5s; }
+.show-aside { display: inline-block; transition: 5s; }
+
+footer {color: #010101; height: 100%; width: 50%; margin: auto; border-top: 1px solid #dedede; padding-top: 10px; }
+footer i {color: #010101;}
+footer i:hover { color:#8a8a8a; }
+
+
+/* ==========  ARTICLE ========== */
+.article { width:90%; margin:auto; padding:10px;  margin-top: 10px;  background: #fff; border-radius:5px; color:#010101; border:1px solid #dad1d1;}
+.article:hover { box-shadow:0px 0px 10px 2px #dedede }
+.header-article {width: 90%; height: auto; margin:auto; text-align: center; border-bottom:1px solid #f1f1f1; padding:5px; font-size: 1.8em;}
+.body-article { width: 90%; height:auto; margin:auto; text-align: justify; padding:10px; }
+
+/* ==========  CADASTRO DE AVISO ========== */
+.textbox-aviso { width:100%; height:40px; background: #fff; border: 1px solid #aaaaaa; text-align: center; border-radius: 5px; margin:auto;}
+.textarea-aviso {  width:100%;  height:120px; margin-top:10px; padding-top:10px; font-family: arial; text-align:center; border: 1px solid #aaaaaa; border-radius: 5px; }
+.select-aviso { width: 100%; height:40px; margin-bottom: 5px; background: #fff; color:#000000; border:1px solid #dedede; border-radius: 5px; text-align-last: center;}
+.btn-aviso { width: 100%;  height:50px; border-radius: 5px; background: #000000; color:#fff}
+.btn-aviso:hover { background: #2d2d2d; cursor: pointer; }
+
+/* ==================================  PAGINA DE GERENCIMENTO DE AVISOS =============================================== */
+#conteiner-avisos { width:100%; height: auto; }
+#conteiner-avisos li { width:90%; height: auto; padding:10px 2%; margin:auto; margin-top: 5px; border-radius: 4px; text-align:center; background:#000000; color:#fff; }
+#conteiner-avisos li:hover { box-shadow: 0px 0px 20px 1px #000000; cursor: pointer; }
+
+#conteiner-paginacao { width:fit-content; height:auto; margin:auto; padding:10px;}
+#conteiner-paginacao li { display: inline-block; width: 35px; height:30px; text-align: center; padding-top: 10px; border-radius: 5px; background:#000000; color:#fff; }
+#conteiner-paginacao li:hover { box-shadow: 0px 0px 20px 1px #000000; cursor: pointer; }
+
+/*=========== DISPLAY DIALOG ==========*/
+.dialog-item { width:100%; height: auto; margin-top: 20px;}
+.dialog-item li { width:90%; padding:10px 2%; margin:auto; margin-top: 5px; border-radius: 4px; text-align:center; color:#fff; }
+.dialog-item i {margin-right: 10px; }
+
+.conteiner-display {width: 100%; height: 100%; position:fixed; background:rgba(0,0,0,0.9); display:none; }
+.conteiner-dialog { width: 90%; height:250px; background:#fff; margin:auto; margin-top:160px; border-radius: 5px; padding:5px;}
+.dialog-header {width: 90%; height:40px; margin:auto;border-bottom:1px solid #dedede;color:#000000; }
+.dialog-title { width:80%; height:40px; margin:auto; text-align: center; float:left; font-size:2.4em;}
+.dialog-close { width: 15%; height:40px; float: right; }
+.dialog-close i {float:right; padding: 10px; font-size:1.6em;}
+.dialog-close:hover { cursor: pointer; }
+
+
+/* ==========  MEDIA SCREEN ========== */
+
+@media screen and (min-width:866px){
+
+    #button-menu {display:none;}
+
+    /*======= CONTEINERS ======*/
+    .conteiner {float:right;}
+    .conteiner-aside {  width:15%; float:left; }
+    .conteiner-header { width:100%; }
+    .conteiner-article { float:right;  width: 85%; margin-top:0px; }
+    .conteiner-footer {  margin-top:0px; float:right;  }
+
+    .body-article {width: 70%;}
+
+    .nav-aside {background:#fff;}
+    .nav-aside li {color:#000000;}
+    .nav-aside li:hover { background:#000000 ;color:#fff; }
+    .hide-aside {display: inline-block; }
+
+
+}

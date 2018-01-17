@@ -6,7 +6,7 @@
     
      
     <?php /*SOMENTE MOSTRAR MENU NA SESSÃO DO CLIENTE*/ ?>     
-    <?php if (strcmp(strtoupper($this->uri->segment(1)), 'CLIENTE') === 0): ?>  
+    <?php if (isset($_SESSION['USUARIO'])): ?>  
     <nav  class="menu hidde-menu" >
 
         <div class="hidde-item-menu" id="itens-menu">
