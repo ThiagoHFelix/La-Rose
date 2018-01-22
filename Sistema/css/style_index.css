@@ -6,12 +6,12 @@
 ================================= */
 
 /* ==========  Fontes ========== */
-@import url('https://fonts.googleapis.com/css?family=Sacramento');/* font-family: 'Sacramento', cursive; */
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
 
 /* ==========  Reset ========== */
 * {padding: 0px;margin: 0px;font-size: 100%;font-weight: 300;border:none;  }
 
-body {background-color:#010101; color:#fff; width:100%;font-family: arial;}
+body {background-color:#010101; color:#fff; width:100%;}
 
 a { color:#fff;text-decoration: none; }
 

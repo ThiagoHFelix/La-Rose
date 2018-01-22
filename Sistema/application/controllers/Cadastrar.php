@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 include_once 'application/objetos/Pessoa.php';
+include_once 'application/objetos/Aviso.php';
 
 /**
  * Classe responsavel pelo cadastro no sistema
@@ -216,8 +217,74 @@ class Cadastrar extends CI_Controller {
         return FALSE;
         
     }//insertPessoa
-    
-    
+
+
+    /**
+    * Cadastra um novo aviso no sistema
+    */
+    public function aviso(){
+
+      if($this->verificaAviso()):
+
+            if($this->insertAviso()):
+
+                $this->session->set_flashdata('aviso_cadastro','O aviso foi registrado com sucesso');
+
+            endif;
+
+        endif;
+
+        $this->load->view('Session/Administrador/cadastro-aviso');
+        
+    }//Aviso
+
+    /**
+    * Faz a validação de dados do formulario
+    * @return boolean [TRUE ou FALSE] TRUE quando os dados forem validados FALSE quando não forem validados
+    */
+    private function verificaAviso(){
+
+        $this->form_validation->set_rules('titulo','Titulo','trim|required|max_length[45]');
+        $this->form_validation->set_rules('texto','Texto','trim|required|max_length[350]');
+        $this->form_validation->set_rules('destinatario','Destinatario','trim|required');
+
+        if($this->form_validation->run()):
+
+            return TRUE;
+
+        else:
+
+            $this->session->set_flashdata('aviso_cadastro',validation_errors());
+            return FALSE;
+
+        endif;    
+
+
+    }//verificaAviso
+
+
+    /**
+    * Insere um objeto de aviso no banco de dados
+    * @return boolean [TRUE ou FALSE] TRUE em caso de sucesso e FALSE na falha
+    */
+    private function insertAviso(){
+
+        $this->load->model('AvisoModel');
+
+        $titulo = $this->input->post('titulo');
+        $texto = $this->input->post('texto');
+        $destinatario = $this->input->post('destinatario');
+        $pessoa_id = $this->session->userdata('ID');
+
+        $aviso = new Aviso($titulo,$texto,(int)$pessoa_id,$destinatario,TRUE,0);
+
+        $retorno = $this->AvisoModel->insert($aviso);
+
+        if(!$retorno) $this->session->set_flashdata('usuario_aviso','Não foi possivel registrar o aviso. Se o problema persistir entre em contato com o administrador');
+
+        return $retorno;
+
+    }//insertAviso
     
 }//class
 

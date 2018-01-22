@@ -23,6 +23,8 @@ class Administrador  extends CI_Controller{
         if(strcmp(strtoupper($this->session->userdata('TIPO')),'ADM') !== 0):
             redirect(base_url('/erro404'));
         endif;
+
+
         
     }//construct
     
@@ -30,7 +32,7 @@ class Administrador  extends CI_Controller{
      * Função default, carrega a pagina inicial da sessão do administrador
      */
     public function index(){
-        $this->load->view('Session/Administrador/Session');
+        $this->load->view('Session/Administrador/dashboard');
     }//index
     
     
@@ -38,8 +40,32 @@ class Administrador  extends CI_Controller{
      * Gerenciamento de avisos do sistema
      */
     public function aviso(){
-        $this->load->view('Session/Administrador/Aviso');
-    }
+
+        $this->load->model(['AvisoModel','PessoaModel']);
+
+        $objs_aviso =  $this->AvisoModel->getAll();
+
+        $this->load->view('Session/Administrador/Aviso',compact('objs_aviso'));
+    
+    }//aviso
+
+       /**
+     * Desloga o administrador do sistema
+     */
+    public function sair(){
+        
+        
+       if (isset($_SESSION['TIPO']) && isset($_SESSION['NOME']) && isset($_SESSION['USUARIO']) && isset($_SESSION['EMAIL']) && isset($_SESSION['ID'])):
+
+            unset($_SESSION['TIPO']);
+            unset($_SESSION['NOME']);
+            unset($_SESSION['USUARIO']);
+            unset($_SESSION['EMAIL']);
+            unset($_SESSION['ID']);
+            redirect(base_url('/Inicio'));
+
+        endif;
+    }//sair
     
 }//class
 

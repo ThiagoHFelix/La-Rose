@@ -4,24 +4,6 @@
     <button class="btn-menu"><i class="fa fa-bars fa-lg" ></i></button>
 
     
-     
-    <?php /*SOMENTE MOSTRAR MENU NA SESSÃO DO CLIENTE*/ ?>     
-    <?php if (isset($_SESSION['USUARIO'])): ?>  
-    <nav  class="menu hidde-menu" >
-
-        <div class="hidde-item-menu" id="itens-menu">
-            <a class="fechar" href="#"><i class="fa fa-times fa-lg"></i></a> 
-            <ul>
-                <a href="<?PHP echo base_url('/Cliente/Sair'); ?>"><li>Sair<i class="fa fa-users"> </i></li> </a>
-            </ul>
-        </div>
-
-    </nav>
- 
- <?php /* Este menu não deve aparecer no header dentro da àrea do cliente */ ?>       
- <?php ELSE: ?>
-    
-    
     <nav  class="menu hidde-menu" >
 
         <div class="hidde-item-menu" id="itens-menu">
@@ -43,7 +25,8 @@
 
     </nav>
     
-    <?php endif; ?>
+
+
    
     
 </div> 

@@ -94,6 +94,33 @@ class PessoaModel extends CI_Model{
         return NULL;
 
     }//getAll
+
+    /**
+    * Busca uma pessoa no banco de dados através do id
+    * @param Int $id Id da pessoa a ser buscada no banco de dados
+    * @return type [Pessoa ou NULL] Objeto de PESSOA em caso de sucesso  e NULL em caso de falha 
+    */
+    public function getPessoaById(int $id){
+
+        if($id < 0):
+            return NULL;
+        endif;
+
+        $pessoas = $this->getAll();
+
+        foreach($pessoas as $pessoa):
+
+            if( (int)$pessoa->getId() === $id ):
+
+                return $pessoa;
+
+            endif;    
+
+        endforeach;        
+
+        return NULL;
+
+    }//getPessoaById
     
     
     

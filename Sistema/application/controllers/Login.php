@@ -107,7 +107,6 @@ class Login extends CI_Controller{
      */
     private function validaUsuario(){
         
-        
         $this->load->model('PessoaModel');
         
         

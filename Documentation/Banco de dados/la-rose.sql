@@ -50,11 +50,12 @@
     status boolean not null,
     mensagem varchar(350) not null,
     pessoa_id integer NOT NULL,
+    destinatario varchar(20) not null,
     
     constraint PK_AVISO primary key (id),
     constraint FK_PESSOA_ foreign key (pessoa_id) references PESSOA (id),
-    constraint CK_STATUS_AV check (upper(status) = 'ATIVO' or upper(status) = 'INATIVO') 
- 
+    constraint CK_STATUS_AV check (upper(status) = 'ATIVO' or upper(status) = 'INATIVO'), 
+ 	constraint CK_Destinatario check( upper(destinatario) = 'CLIENTE' or upper(destinatario) = 'ADM' )
  );
  
  /*========= TRIGGER ===========*/

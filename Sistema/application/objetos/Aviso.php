@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  ===================================================================
   @Arquivo: Aviso                                 
   @Autor: Thiago Henrique Felix <thiagoacdc12@gmail.com>          
-  @Data:   03/01/2018                      
+  @Data:   20/01/2018                      
   @Projeto: La-Rose                                
  ===================================================================   
  */
@@ -17,8 +17,7 @@ class Aviso {
     private $mensagem;
     private $pessoa_id;
     private $status;
-  
-      
+    private $destinatario;
   
       /**
      * Construtor da classe
@@ -26,14 +25,18 @@ class Aviso {
      * @param type $titulo Titulo da mensagem
      * @param type $mensagem Texto da mensagem
      * @param type $pessoa_id Identificação da pessoa que fez a mensagem
+     * @param string $destinatario Pessoas que iram receber o aviso
      * @param boolean $status
      */
-    function __construct($id, $titulo, $mensagem, $pessoa_id, boolean $status) {
+    function __construct(string $titulo,string $mensagem,int $pessoa_id,string $destinatario ,bool $status,int $id) {
+    
         $this->id = $id;
         $this->titulo = $titulo;
         $this->mensagem = $mensagem;
         $this->pessoa_id = $pessoa_id;
         $this->status = $status;
+        $this->destinatario = $destinatario;
+    
     }//construct
     
      /**
@@ -53,6 +56,7 @@ class Aviso {
                    '<br/><strong>Titulo:</strong> '.$this->getTitulo().
                    '<br/><strong>Mensagem:</strong> '.$this->getMensagem().
                    '<br/><strong>Pessoa ID:</strong> '.$this->getPessoa_id().
+                   '<br/><strong>Destinatario:</strong> '.$this->getDestinatario().
                    '<br/><strong>Status:</strong> '.$this->getStatus().
                    '<br/>===================================================================';
  
@@ -81,30 +85,37 @@ class Aviso {
         return $this->pessoa_id;
     }
 
+    function getDestinatario() {
+        return $this->destinatario;
+    }
+
     function getStatus() {
         return $this->status;
     }
 
-    function setId($id) {
+    function setId(int $id) {
         $this->id = $id;
     }
 
-    function setTitulo($titulo) {
+    function setTitulo(string $titulo) {
         $this->titulo = $titulo;
     }
 
-    function setMensagem($mensagem) {
+    function setMensagem(string $mensagem) {
         $this->mensagem = $mensagem;
     }
 
-    function setPessoa_id($pessoa_id) {
+    function setPessoa_id(int $pessoa_id) {
         $this->pessoa_id = $pessoa_id;
     }
 
-    function setStatus($status) {
+    function setStatus(bool $status) {
         $this->status = $status;
     }
 
+    function setDestinatario(string $destinatario) {
+        $this->destinario = $destinatario;
+    }
 
     
     
