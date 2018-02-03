@@ -71,16 +71,19 @@ body {  background:#dedede;  }
 
 
 /* TABELA DE AVISOS */
-#table-aviso { width:100%; box-shadow:0px 0px 5px 5px #dedede; margin:auto; text-align:center; padding:5px; }
+#table-aviso { width:100%; margin:auto; text-align:center; padding:5px; }
 #table-aviso td { padding:10px;}
 #btn-table-alter { padding:10px; background:blue; color:#fff; border:none; margin-top:5px; }
 #btn-table-alter:hover { box-shadow:0px 0px 5px 5px #dedede; }
 #btn-table-del {padding:10px; background:red; color:#fff; border:none; margin-top:5px;}
 
 /*TABLE PAGINATION*/
-#table-pagination {  width: 310px; padding:10px; box-shadow: 0px 0px 5px 5px #dedede;  margin:auto; margin-top:20px; }
+#table-pagination {  width: 310px; padding:10px;  margin:auto; margin-top:20px; }
 #table-pagination ul li { display: inline-block; text-decoration: none; padding:10px; color:#000000; }
-#table-pagination ul li:hover { background:blue; color:#fff; }
+#table-pagination ul li:hover { background:#dedede; }
+
+/*PAGINA ATUAL*/
+.selected { background:#e2e2e2; color:#fff; }
 
 /* MEDIA SCREEN */
 @media screen and (min-width:866px){

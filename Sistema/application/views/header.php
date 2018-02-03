@@ -13,7 +13,7 @@
                 <a href="<?php echo base_url('/Inicio'); ?>"><li> Inicio<i class="fa fa-home"> </i></li> </a> 
 
                 <?php /*SOMENTE MOSTRAR ESTES ITENS DE MENU NA PAGINA INICIAL*/ ?>     
-                <?php if (strcmp(strtoupper($this->uri->segment(1)), 'INICIO') === 0): ?>     
+                <?php if (strcmp(strtoupper($this->uri->segment(1)), 'LOGIN') !== 0): ?>     
                     <a href="#" id="quem-somos"><li> Quem somos<i class="fa fa-users"> </i></li> </a> 
                     <a id="contato" href="#"><li> Contato<i class="fa fa-user"> </i></li> </a> 
                 <?php endif; ?>

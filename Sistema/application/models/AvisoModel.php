@@ -58,11 +58,13 @@ class AvisoModel extends CI_Model {
 
 	/**
 	* Busca todos os avisos no banco de dados
+	* @param int $limit Quantidade de resultados que devem ser retornados
+	* @param int $offset A partir de qual resultado deve começar
 	* @return type [(Aviso)Array ou NULL] (Aviso)Array de avisos em caso de sucesso e NULL em caso de falha 
 	*/
-	public function getAll(){
+	public function getAll(int $limit = 0, int $offset = 0){
 
-		$avisos = $this->db->get('AVISO');
+		$avisos = $this->db->get('AVISO',$limit,$offset);
 		log_message('debug','Buscando avisos do banco de dados');
 
 		if($avisos->num_rows() > 0):
@@ -85,7 +87,7 @@ class AvisoModel extends CI_Model {
 
 		else:
 
-			log_messege('debug','Nenhum aviso foi encontado no banco de dados');
+			log_message('debug','Nenhum aviso foi encontado no banco de dados');
 			return NULL;
 
 		endif;
@@ -95,6 +97,19 @@ class AvisoModel extends CI_Model {
 
 	}//getAll
 
+
+	/**
+	* Retorna a quantidade de resultados de avisos no banco de dados
+	* @return int [INT] Retorna a quantidade de itens de aviso no banco de dados
+	*/
+	public function getAllNum(){
+
+		$avisos = $this->db->get('AVISO');
+		log_message('debug','Buscando avisos no banco de dados');
+
+		return $avisos->num_rows();
+
+	}//getAllNum
 
 
 }//class

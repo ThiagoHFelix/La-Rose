@@ -2,13 +2,13 @@ La'Rose
 --------------------
 Sobre
 -----
-La'Rose é um _software_ para agendamento de horários para um salão de cabeleireiro porém não se limita a apenas isso o _software_ tambem tem funções para criação de artigos, noticias e lembretes. Para mais informações acesse a documentação do sistema.
+La'Rose é um _software_ para agendamento de horários para um salão de cabeleireiro. Para mais informações acesse a documentação do sistema.
 
 Ferramentas
 -----------
 Para o desenvolvimento desta ferramenta será utilizado algumas ferramentas especificas. Veja abaixo:
 + Linguagem de programação _server-side_ **PHP** | Version 7.0
-+ SGBD (Sistema Gerenciador de Banco de Dados) **Firebird** | Version 2.5
++ SGBD (Sistema Gerenciador de Banco de Dados) **MySQL** | Version 10.1.29-MariaDB
 + Framework Backend **Codeigniter** | Version 3.1.6
 
 Desenvolvedores

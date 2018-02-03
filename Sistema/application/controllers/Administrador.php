@@ -39,13 +39,17 @@ class Administrador  extends CI_Controller{
     /**
      * Gerenciamento de avisos do sistema
      */
-    public function aviso(){
+    public function aviso(int $offset = 0, int $limit = 3){
 
         $this->load->model(['AvisoModel','PessoaModel']);
 
-        $objs_aviso =  $this->AvisoModel->getAll();
+        $objs_aviso =  $this->AvisoModel->getAll($limit,$offset);
 
-        $this->load->view('Session/Administrador/Aviso',compact('objs_aviso'));
+        $quant_aviso = $this->AvisoModel->getAllNum();
+
+        $num_pag = $quant_aviso / 3;
+
+        $this->load->view('Session/Administrador/Aviso',compact('objs_aviso','num_pag'));
     
     }//aviso
 
