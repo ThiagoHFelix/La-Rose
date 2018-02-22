@@ -34,6 +34,13 @@
     </head>
     <body>
         
+          <?php 
+        
+            /* Mensagem de versionamento do projeto */
+            include_once 'avisos/versionamento.php';
+        
+        ?>
+        
         <?php include_once 'header.php'; ?>
 
 

@@ -11,7 +11,7 @@
         <meta name="viewport"content="width:device-width, initial-scale=1.">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=4">
+        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=6">
 
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
@@ -19,6 +19,14 @@
 
     </head>
     <body>
+        
+        <?php 
+        
+            /* Mensagem de versionamento do projeto */
+            include_once 'avisos/versionamento.php';
+        
+        ?>
+        
 
         <?php 
             

@@ -12,6 +12,13 @@
 <!DOCKTYPE html>
 <html lang="pt-br">
 	
+      <?php 
+        
+            /* Mensagem de versionamento do projeto */
+            include_once 'avisos/versionamento.php';
+        
+        ?>
+    
 	<head>
 		
 		<title>La'Rose | Dashboard</title>
