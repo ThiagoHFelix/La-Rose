@@ -11,102 +11,113 @@
         <meta name="viewport"content="width:device-width, initial-scale=1.">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=6">
+        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=8">
 
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
 
-
+        <script type="text/javascript" src="js/loadPage.js"></script>
+        
     </head>
     <body>
+
         
-        <?php 
+            <?php
+            /* Div de carregamento da página */
+            include_once 'complementos/carregamento.php';
+            ?>
         
+            
+            
+        <div id="content-all" style="display: none;">
+
+
+            <?php
             /* Mensagem de versionamento do projeto */
-            include_once 'avisos/versionamento.php';
-        
-        ?>
-        
+            include_once 'complementos/versionamento.php';
+            ?>
 
-        <?php 
-            
-            /*Cabeçalho*/
+
+            <?php
+            /* Cabeçalho */
             include_once 'header.php';
-            
-        ?>
+            ?>
 
-        <div class="banner">
+            <div id="slideshow" class="banner">
+                <div id="background-text">
 
-            <h2>Seja Bem-Vindo</h2>
-            <p> <i class="logo-sm">La'Rose</i>é um salão de cabeleireiro que atende tanto homens quanto mulheres. Venha nos Conhecer</p>
-            <p id="funcionamento" >Estamos abertos de Segunda a Sabado das 08:00am até 09:00pm</p>
+                    <h2>Seja Bem-Vindo</h2>
+                    <p> <i class="logo-sm">La'Rose</i>é um salão de cabeleireiro que atende tanto homens quanto mulheres. Venha nos Conhecer</p>
+                    <p id="funcionamento" >Estamos abertos de Segunda a Sabado das 08:00am até 09:00pm</p>
 
-        </div>
-
-        <main class="conteiner-equipe" id="equipe">
-
-            <div class="texto" >
-                <h3>Nossa Equipe</h3>
-                <p>A nossa equipe da  <i class="logo-sm">La'Rose</i>é composta por três pessoas muito talentosas, temos a missão de embelezar o dia das pessoas</p>
+                </div>
             </div>
 
-            <div class="conteiner-perfils">
+            <main class="conteiner-equipe" id="equipe">
 
-                <div class="conteiner-perfil">
-                    <article class="perfil" >
-                        <div class="foto">
-                            <img alt="Foto da Angelica da Silva Benegathi" src="img/mulher-perfil.jpg?v=2">
-                        </div>
-                        <div class="nome">Angelica da Silva Benegathi</div>
-                        <div class="funcao">Cabeleireira</div>
-                    </article>
-                </div>
-                <div class="conteiner-perfil">
-                    <article class="perfil" >
-                        <div class="foto">
-                            <img alt="Foto da Beatriz Ferreira Bertoli" src="img/mulher-perfil_2.jpg">
-                        </div>
-                        <div class="nome">Beatriz Ferreira Bertoli</div>
-                        <div class="funcao">Sócia</div>
-                    </article>
+                <div class="texto" >
+                    <h3>Nossa Equipe</h3>
+                    <p>A nossa equipe da  <i class="logo-sm">La'Rose</i>é composta por três pessoas muito talentosas, temos a missão de embelezar o dia das pessoas</p>
                 </div>
 
-                <div class="conteiner-perfil">
-                    <article class="perfil" >
-                        <div class="foto">
-                            <img alt="Foto do Reginaldo da Cruz Mancin" src="img/homem-perfil.jpg">
-                        </div>
-                        <div class="nome">Reginaldo da Cruz Mancin</div>
-                        <div class="funcao">Escritório</div>
-                    </article>
+                <div class="conteiner-perfils">
+
+                    <div class="conteiner-perfil">
+                        <article class="perfil" >
+                            <div class="foto">
+                                <img alt="Foto da Angelica da Silva Benegathi" src="img/mulher-perfil.jpg?v=2">
+                            </div>
+                            <div class="nome">Angelica da Silva Benegathi</div>
+                            <div class="funcao">Cabeleireira</div>
+                        </article>
+                    </div>
+                    <div class="conteiner-perfil">
+                        <article class="perfil" >
+                            <div class="foto">
+                                <img alt="Foto da Beatriz Ferreira Bertoli" src="img/mulher-perfil_2.jpg">
+                            </div>
+                            <div class="nome">Beatriz Ferreira Bertoli</div>
+                            <div class="funcao">Sócia</div>
+                        </article>
+                    </div>
+
+                    <div class="conteiner-perfil">
+                        <article class="perfil" >
+                            <div class="foto">
+                                <img alt="Foto do Reginaldo da Cruz Mancin" src="img/homem-perfil.jpg">
+                            </div>
+                            <div class="nome">Reginaldo da Cruz Mancin</div>
+                            <div class="funcao">Escritório</div>
+                        </article>
+                    </div>
+
                 </div>
 
-            </div>
+            </main>
 
-        </main>
+            <section class="contato" id="formulario-contato">
 
-        <section class="contato" id="formulario-contato">
+                <form>
+                    <h3>Entre em contato conosco</h3>
+                    <input class="caixa-texto" type="text" maxlength="20" name="titulo" placeholder="Titulo..." > 
+                    <input class="caixa-texto" type="email" maxlength="30" name="email" placeholder="Seu e-mail..." > 
+                    <textarea class="caixa-texto textarea" type="texto" maxlength="500" name="texto" placeholder="Escreva o texto..." ></textarea> 
+                    <button class="btn" >Enviar</button>
 
-            <form>
-                <h3>Entre em contato conosco</h3>
-                <input class="caixa-texto" type="text" maxlength="20" name="titulo" placeholder="Titulo..." > 
-                <input class="caixa-texto" type="email" maxlength="30" name="email" placeholder="Seu e-mail..." > 
-                <textarea class="caixa-texto textarea" type="texto" maxlength="500" name="texto" placeholder="Escreva o texto..." ></textarea> 
-                <button class="btn" >Enviar</button>
+                </form>
 
-            </form>
+            </section>
 
-        </section>
-
-        <?php
-            
-            /*Rodapé*/
+            <?php
+            /* Rodapé */
             include_once 'footer.php'
-        
-        ?>
+            ?>
 
-        <div class="mover-para-inicio" hidden="true" >
-            <i  class="fa fa-angle-up fa-fw fa-4x" aria-hidden="true" ></i>
+            <div class="mover-para-inicio" hidden="true" >
+                <i  class="fa fa-angle-up fa-fw fa-4x" aria-hidden="true" ></i>
+            </div>
+
+
         </div>
 
     </body>
@@ -120,7 +131,24 @@
 
 
 
+    <script type="text/javascript">
 
-   
+        function runSlideShow() {
+
+            var divSlide = document.getElementById('slideshow');
+
+            //Numero aleatório
+            var number = Math.floor((Math.random() * 5) + 1);
+
+            divSlide.style.background = " #000000 url(\"<?php echo base_url(); ?>img/banner/banner-" + number + ".jpg?v=5\") center no-repeat";
+
+            setTimeout(runSlideShow, 5000);
+
+        }//runSlideShow
+
+        runSlideShow();
+
+    </script>
+
 
 </html>

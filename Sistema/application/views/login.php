@@ -18,16 +18,25 @@
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
 
-
+        <script type="text/javascript" src="js/loadPage.js"></script>
 
     </head>
 
     <body>
+      
+        
+            <?php
+            /* Div de carregamento da página */
+            include_once 'complementos/carregamento.php';
+            ?>
+        
+        
+           <div id="content-all" style="display: none;">
         
           <?php 
         
             /* Mensagem de versionamento do projeto */
-            include_once 'avisos/versionamento.php';
+            include_once 'complementos/versionamento.php';
         
         ?>
 
@@ -54,7 +63,10 @@
 <?php endif; ?>
                 
                 <button class="btn ">Logar</button>
+                
+                   <!--
                 <p id="logar-com" class="font-site">Logar Com</p>
+             
                 <div class="conteiner-sociais">
                     <ul>
                         <li class="login-social" > <a href="#"> <i class="fab fa-lg fa-facebook" aria-hidden="true" ></i> Logar com o Facebook </a></li>
@@ -63,8 +75,8 @@
                     </ul>
 
                 </div>
-
-                <div class="cadastrar-se">
+-->
+            <div class="cadastrar-se">
                     <a href="<?php echo base_url('/Cadastrar/Cliente'); ?>" >Cadastrar-se</a>
                 </div>
 
@@ -72,9 +84,10 @@
 
         </div>
 
-
+       
         <?php /* Rodapé */ include_once 'footer.php'; ?>
-
+               
+           </div>
         <!-- Scripts -->
         <!-- Jquery -->
         <script type="text/javascript" src="pacotes/jquery/jquery-3.2.1.js"></script>

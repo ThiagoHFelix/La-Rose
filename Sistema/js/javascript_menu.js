@@ -1,4 +1,11 @@
-
+/*
+ ===================================================================
+  @Arquivo: Versionamento                                 
+  @Autor: Thiago Henrique Felix <thiagoacdc12@gmail.com>          
+  @Data:   22/02/2018                      
+  @Projeto: La-Rose                                
+ ===================================================================   
+ */
 
 /* ====== Menu Mobile ======= */
 
