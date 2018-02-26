@@ -49,7 +49,7 @@ class Administrador  extends CI_Controller{
 
         $num_pag = $quant_aviso / 3;
 
-        $this->load->view('Session/Administrador/Aviso',compact('objs_aviso','num_pag'));
+        $this->load->view('Session/Administrador/aviso',compact('objs_aviso','num_pag'));
     
     }//aviso
 

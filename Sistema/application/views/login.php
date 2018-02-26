@@ -11,9 +11,9 @@
         <meta name="viewport"content="width:device-width, initial-scale=1.">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style_login.css?v=8">
-        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=5">
-        <link type="text/css" rel="stylesheet" href="css/style_cadastro.css?v=1">
+        <link type="text/css" rel="stylesheet" href="css/style_login.css?v=12">
+        <link type="text/css" rel="stylesheet" href="css/style_index.css?v=6">
+        <link type="text/css" rel="stylesheet" href="css/style_cadastro.css?v=2">
 
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
@@ -61,21 +61,20 @@
                     <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i>  <?php echo $this->session->flashdata('aviso_login'); ?>   </div>
 
 <?php endif; ?>
-                
+              
                 <button class="btn ">Logar</button>
                 
-                   <!--
+              
                 <p id="logar-com" class="font-site">Logar Com</p>
              
                 <div class="conteiner-sociais">
                     <ul>
                         <li class="login-social" > <a href="#"> <i class="fab fa-lg fa-facebook" aria-hidden="true" ></i> Logar com o Facebook </a></li>
-                        <li class="login-social" > <a href="#"> <i class="fab fa-lg fa-twitter" aria-hidden="true" ></i> Logar com o Twitter </a></li>
                         <li class="login-social" > <a href="#"> <i class="fab fa-lg fa-google" aria-hidden="true" ></i> Logar com o Gmail </a></li>
                     </ul>
 
                 </div>
--->
+
             <div class="cadastrar-se">
                     <a href="<?php echo base_url('/Cadastrar/Cliente'); ?>" >Cadastrar-se</a>
                 </div>

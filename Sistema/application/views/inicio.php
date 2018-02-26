@@ -140,7 +140,7 @@
             //Numero aleatório
             var number = Math.floor((Math.random() * 5) + 1);
 
-            divSlide.style.background = " #000000 url(\"<?php echo base_url(); ?>img/banner/banner-" + number + ".jpg?v=5\") center no-repeat";
+            divSlide.style.background = " #000000 url(\"<?php echo base_url(); ?>img/banner/banner-" + number + ".jpg?v=9\") center no-repeat";
 
             setTimeout(runSlideShow, 5000);
 

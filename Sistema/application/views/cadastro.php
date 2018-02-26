@@ -13,70 +13,77 @@
         <!-- CSS -->
         <link type="text/css" rel="stylesheet" href="../css/style_login.css?v=2">
         <link type="text/css" rel="stylesheet" href="../css/style_index.css?v=2">
-        <link type="text/css" rel="stylesheet" href="../css/style_cadastro.css?v=5">
+        <link type="text/css" rel="stylesheet" href="../css/style_cadastro.css?v=6">
 
 
         <!-- Icons | site = Fonts Awesome -->
         <link rel="stylesheet" type="text/css" href="../pacotes/fontawesome-free-5.0.2/web-fonts-with-css/css/fontawesome-all.css">
 
-
+        <script type="text/javascript" src=" <?php echo base_url(); ?>js/loadPage.js"></script>
 
     </head>
 
     <body>
-        
-          <?php 
-        
-            /* Mensagem de versionamento do projeto */
-            include_once 'avisos/versionamento.php';
-        
+
+
+
+        <?php
+        /* Div de carregamento da página */
+        include_once 'complementos/carregamento.php';
         ?>
 
-        <?php /* Cabeçalho */ include_once 'header.php'; ?>
+        <div id="content-all" style="display: none;">
+
+            <?php
+            /* Mensagem de versionamento do projeto */
+            include_once 'complementos/versionamento.php';
+            ?>
+
+            <?php /* Cabeçalho */ include_once 'header.php'; ?>
 
 
-        <div class="conteiner-app">
+            <div class="conteiner-app">
 
-            <div class="logo-login">
+                <div class="logo-login">
 
-                <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i><p> Todos os campos com os caracter (*) são obrigatórios</p></div>
-                <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A data maxíma de nascimento aceita é de no minimo cinco anos atrás </p>  </div>
-                <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A senha deve ter ao menos cinco caracteres </p>  </div>
-            </div>
+                    <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i><p> Todos os campos com os caracter (*) são obrigatórios</p></div>
+                    <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A data maxíma de nascimento aceita é de no minimo cinco anos atrás </p>  </div>
+                    <div class="alerta"><i class="fa fa-exclamation-triangle fa-lg"></i> <p> A senha deve ter ao menos cinco caracteres </p>  </div>
+                </div>
 
-            <form method="POST" action="<?php echo base_url('/Cadastrar/Cliente'); ?>">
+                <form method="POST" action="<?php echo base_url('/Cadastrar/Cliente'); ?>">
 
-                <input value="<?php echo $input_nome_usuario; ?>"  class="caixa-texto" type="text" name="nome_usuario" maxlength="20" required placeholder="Nome de Usuário*" />
-                <input value="<?php echo $input_nome; ?>" class="caixa-texto" type="text" name="nome" maxlength="60" required placeholder="Nome Completo*" />
-                <input value="<?php echo $input_email; ?>" class="caixa-texto" type="email" name="email" maxlength="60"  required placeholder="E-mail*" />
-                <input value="<?php echo $input_telefone; ?>" class="caixa-texto" type="text" name="telefone" maxlength="20"  placeholder="Telefone" />
-                <select required name="sexo" class="caixa-texto" style="text-indent: 30%;" >
-                    <option value="">Selecione seu sexo*</option>
-                    <option  <?php
-                    if (strcmp($input_sexo, 'M') == 0): echo 'selected';
-                    endif;
-                    ?>  value="M">Masculino</option>
-                    <option  <?php
-                    if (strcmp($input_sexo, 'F') == 0): echo 'selected';
-                    endif;
-                    ?>  value="F">Feminino</option>
-                </select>
-                <input value="<?php echo $input_nascimento; ?>"  class="caixa-texto" type="date"  style="text-indent: 5%; font-family: tomoha;" name="nascimento" placeholder="Nascimento" />
-                <input value="<?php echo $input_senha; ?>" class="caixa-texto" type="password" name="senha" minlength="5" maxlength="30" required placeholder="Senha*" />
-                <input value="<?php echo $input_conf_senha; ?>" class="caixa-texto" type="password" name="conf_senha" minlength="5" maxlength="30" required placeholder="Confirmação de Senha*" />
+                    <input value="<?php echo $input_nome_usuario; ?>" id="nome_usuario" class="caixa-texto" type="text" name="nome_usuario" maxlength="20" required placeholder="Nome de Usuário*" />
+                    <input value="<?php echo $input_nome; ?>" id="nome" class="caixa-texto" type="text" name="nome" maxlength="60" required placeholder="Nome Completo*" />
+                    <input value="<?php echo $input_email; ?>" id="email" class="caixa-texto" type="email" name="email" maxlength="60"  required placeholder="E-mail*" />
+                    <input value="<?php echo $input_telefone; ?>" id="telefone" class="caixa-texto" type="text" name="telefone" maxlength="20"  placeholder="Telefone" />
+                    <select required name="sexo" class="caixa-texto" id="sexo" style="text-indent: 30%;" >
+                        <option value="">Selecione seu sexo*</option>
+                        <option  <?php
+            if (strcmp($input_sexo, 'M') == 0): echo 'selected';
+            endif;
+            ?>  value="M">Masculino</option>
+                        <option  <?php
+                            if (strcmp($input_sexo, 'F') == 0): echo 'selected';
+                            endif;
+                            ?>  value="F">Feminino</option>
+                    </select>
+                    <input value="<?php echo $input_nascimento; ?>" id="nascimento" class="caixa-texto" type="date"  style="text-indent: 5%; font-family: tomoha;" name="nascimento" placeholder="Nascimento" />
+                    <input value="<?php echo $input_senha; ?>" class="caixa-texto" id="senha" type="password" name="senha" minlength="5" maxlength="30" required placeholder="Senha*" />
+                    <input value="<?php echo $input_conf_senha; ?>" class="caixa-texto" id="confsenha" type="password" name="conf_senha" minlength="5" maxlength="30" required placeholder="Confirmação de Senha*" />
 
 
 <?php if (strcmp($this->session->flashdata('aviso_cadastro'), '') !== 0): ?>
 
-                    <div class="alerta" id="aviso_usuario"><i class="fa fa-exclamation-triangle fa-lg"></i>  <?php echo $this->session->flashdata('aviso_cadastro'); ?>   </div>
+                        <div class="alerta" id="aviso_usuario"><i class="fa fa-exclamation-triangle fa-lg"></i>  <?php echo $this->session->flashdata('aviso_cadastro'); ?>   </div>
 
 <?php endif; ?>
 
 
-                <button class="btn">Enviar</button>
+                    <button class="btn">Enviar</button>
 
-            </form>
-
+                </form>
+            </div>   
         </div>
 
 
@@ -92,10 +99,10 @@
 
             $("document").ready(function () {
 
-               
-                    var ancora = $("#aviso_usuario").offset().top;
-                    $("html, body").animate({scrollTop: ancora}, 1600);
-              
+
+                var ancora = $("#aviso_usuario").offset().top;
+                $("html, body").animate({scrollTop: ancora}, 1600);
+
 
             });
 

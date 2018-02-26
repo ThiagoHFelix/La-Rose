@@ -12,12 +12,7 @@
 <!DOCKTYPE html>
 <html lang="pt-br">
 	
-      <?php 
-        
-            /* Mensagem de versionamento do projeto */
-            include_once 'avisos/versionamento.php';
-        
-        ?>
+      
     
 	<head>
 		
@@ -40,16 +35,22 @@
 
 	<body>
 		
+		<?php  /*  ============== HEADER ============= */ ?>
+
+			<?php  $this->load->view('complementos/versionamento') ?>
+
+		<?php  /*  ============== / HEADER ============= */ ?>
+
 		
 		<?php  /*  ============== HEADER ============= */ ?>
 
-			<?php  $this->load->view('Session/Header') ?>
+			<?php  $this->load->view('Session/header') ?>
 
 		<?php  /*  ============== / HEADER ============= */ ?>
 
 		<?php  /*  =============== ASIDE =============== */ ?>
 
-			<?php $this->load->view('Session/Aside'); ?>
+			<?php $this->load->view('Session/aside'); ?>
 
 		<?php  /*  =============== / ASIDE =============== */ ?>
 

@@ -7,7 +7,6 @@
  ===================================================================   
  */
 
- 
  CREATE TABLE PESSOA(
 	 
 	 id integer auto_increment,
@@ -17,7 +16,7 @@
 	 email varchar(60) not null,
 	 telefone varchar(20) not null,
 	 sexo char(1) not null,
-	 status boolean not null,
+	 status varchar(20) not null,
 	 nascimento date not null,
 	 tipo varchar(20) not null,
 	 funcao varchar(45) not null,
@@ -30,8 +29,8 @@
  );
  
  CREATE TABLE AGENDAMENTO(
- 
-	id integer auto_increment,
+    
+    id integer auto_increment,
     data date not null,
     hora time not null,
     status boolean not null,
@@ -74,3 +73,17 @@
  /*========= / TRIGGER ===========*/	 
  
  COMMIT;
+
+
+
+/* INSERTS BÁSICOS DO SISTEMA */
+
+INSERT INTO PESSOA (id,nome_usuario,nome,email,telefone,sexo,status,nascimento,tipo,senha,data_cadastro,funcao)
+VALUES
+/* ADMINISTRADORES */ 
+(1,'ThiagoHFelix','Thiago Henrique Felix','thiagoacdc12@gmail.com','34671053','M','ATIVO','1996/05/06','ADM','123','2018/02/23',''),
+(2,'Ronaldo','Ronaldo da Silva Teixeira','ronaldolin@gmail.com','34671053','M','ATIVO','1996/05/06','ADM','123','2018/02/23',''),
+(3,'Rogerio','Rogerio Busgatto','busgLanf@gmail.com','34671053','M','ATIVO','1996/05/06','ADM','123','2018/02/23',''),
+/* CLIENTES */
+(4,'Leticia','Leticia da Silva','silvaLeticia@gmail.com','34671053','F','ATIVO','1992/08/10','CLIENTE','123','2018/02/23',''),
+(5,'Roberta','Roberta Gasbotto Lima','limaRoberta@gmail.com','34671053','F','ATIVO','1990/02/08','CLIENTE','123','2018/02/23','');

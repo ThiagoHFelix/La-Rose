@@ -34,13 +34,13 @@
 		
 		<?php  /*  ============== HEADER ============= */ ?>
 
-			<?php  $this->load->view('Session/Header') ?>
+			<?php  $this->load->view('Session/header') ?>
 
 		<?php  /*  ============== / HEADER ============= */ ?>
 
 		<?php  /*  =============== ASIDE =============== */ ?>
 
-			<?php $this->load->view('Session/Aside'); ?>
+			<?php $this->load->view('Session/aside'); ?>
 
 		<?php  /*  =============== / ASIDE =============== */ ?>
 
