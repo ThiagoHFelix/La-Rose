@@ -18,7 +18,7 @@ Thiago Henrique Felix
 
 Status do Projeto
 ----------------
-+ Finalizado
++ Não Finalizado
 
 Licença
 ------
